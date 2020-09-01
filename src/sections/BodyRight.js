@@ -12,6 +12,7 @@ import {
 import avatar from "../assets/person.jpg";
 
 const Right = () => {
+  const url = "https://adblocker-campaign.netlify.app/";
   return (
     <Wrapper>
       <Counter>023495</Counter>
@@ -27,20 +28,20 @@ const Right = () => {
       <ShareDesc>Share now :</ShareDesc>
       <SocialShares>
         <FacebookShareButton
-          url="https://getadblock.com/"
+          url={url}
           onShareWindowClose={() => console.log("Shared in FB")}
         >
           <FacebookIcon size={80} round />
         </FacebookShareButton>
         <TwitterShareButton
-          url="https://getadblock.com/"
+          url={url}
           onShareWindowClose={() => console.log("Twitter shared")}
         >
           <TwitterIcon size={80} round />
         </TwitterShareButton>
         <LinkedinShareButton
-          url="https://getadblock.com/"
-          onShareWindowClose={() => console.log("Twitter shared")}
+          url={url}
+          onShareWindowClose={() => console.log("Linkedin shared")}
         >
           <LinkedinIcon size={80} round />
         </LinkedinShareButton>
