@@ -8,14 +8,18 @@ import {
   LinkedinShareButton,
   LinkedinIcon,
 } from "react-share";
+import CountUp from "react-countup";
 
 import avatar from "../assets/person.jpg";
 
 const Right = () => {
   const url = "https://adblocker-campaign.netlify.app/";
+  const count = parseInt(Math.random() * 100000);
   return (
     <Wrapper>
-      <Counter>023495</Counter>
+      <Counter>
+        <CountUp end={count} duration={2} />
+      </Counter>
       <Desc>Downloads</Desc>
       <Icon>
         <i className="fas fa-quote-left"></i>
