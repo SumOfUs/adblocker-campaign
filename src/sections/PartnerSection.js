@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import SOUW from "../assets/partnerLogos/sumofus-white.svg";
+// import SOUW from "../assets/partnerLogos/sumofus-white.svg";
 import SOUD from "../assets/partnerLogos/sumofus-dark.svg";
 import ADB from "../assets/partnerLogos/adblock.png";
 
