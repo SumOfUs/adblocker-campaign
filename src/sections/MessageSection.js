@@ -20,7 +20,7 @@ const MessageSection = () => {
 
 const Wrapper = styled.div`
   min-height: 150px;
-  background-color: #717070;
+  background-color: #172340;
   display: flex;
   flex-direction: column;
   justify-content: center;

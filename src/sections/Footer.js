@@ -70,11 +70,12 @@ const Footer = () => {
 };
 
 const Wrapper = styled.div`
-  margin: 30px;
+  padding: 30px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  background-color: #172340;
 `;
 
 const Left = styled.div`
@@ -93,12 +94,14 @@ const Link = styled.a`
   text-decoration: none;
   font-size: 18px;
   padding-right: 18px;
-  color: black;
+  color: white;
   &:hover {
     color: #00c0cf;
   }
 `;
 
-const Copyright = styled.div``;
+const Copyright = styled.div`
+  color: white;
+`;
 
 export default Footer;

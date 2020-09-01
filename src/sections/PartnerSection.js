@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import SOU from "../assets/partnerLogos/sumofus.svg";
+import SOUW from "../assets/partnerLogos/sumofus-white.svg";
+import SOUD from "../assets/partnerLogos/sumofus-dark.svg";
 import ADB from "../assets/partnerLogos/adblock.png";
 
 const Partner = () => {
@@ -9,11 +10,11 @@ const Partner = () => {
     <Wrapper>
       <Title>Ad Blocker brought to you by:</Title>
       <LogoWrapper>
-        <Logo src={SOU} alt="SumOfUs" />
+        <Logo src={SOUD} alt="SumOfUs" />
         <Logo src={ADB} alt="Ad Block" />
-        <Logo src={SOU} alt="SumOfUs" />
+        <Logo src={SOUD} alt="SumOfUs" />
         <Logo src={ADB} alt="Ad Block" />
-        <Logo src={SOU} alt="SumOfUs" />
+        <Logo src={SOUD} alt="SumOfUs" />
         <Logo src={ADB} alt="Ad Block" />
       </LogoWrapper>
     </Wrapper>
@@ -22,12 +23,12 @@ const Partner = () => {
 
 const Wrapper = styled.div`
   height: 300px;
-  background: #717171;
   padding: 30px;
+  margin-top: 60px;
 `;
 
 const Title = styled.h2`
-  color: white;
+  color: #f8492d;
 `;
 
 const LogoWrapper = styled.div`
