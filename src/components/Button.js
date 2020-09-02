@@ -9,9 +9,9 @@ const Button = styled.a`
   border-radius: 28px;
   border-bottom-left-radius: 0;
   color: white;
-  font-size: 14px;
+  font-size: 24px;
   font-weight: 500;
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
   text-decoration: none;
   display: flex;
   justify-content: center;
