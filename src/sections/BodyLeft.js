@@ -1,10 +1,29 @@
 import React from "react";
 import styled from "styled-components";
+import {
+  browserName,
+  osName,
+  isMobile,
+  isIOS,
+  isAndroid,
+  isChrome,
+  isSafari,
+  isFirefox,
+  isEdge,
+} from "react-device-detect";
 
 import Button from "../components/Button";
 import helper from "../assets/helper.png";
 
 const LeftSection = () => {
+  let detectDevice = "";
+  if (isMobile) {
+    detectDevice = isAndroid ? osName.toLowerCase() : isIOS ? osName : "";
+  } else if (isChrome || isSafari || isFirefox || isEdge) {
+    detectDevice = browserName.toLowerCase();
+  }
+  const url = `https://getadblock.com/${detectDevice}`;
+
   return (
     <Left>
       <p>
@@ -24,11 +43,7 @@ const LeftSection = () => {
         pressure on Facebook to act.
       </p>
       <ButtonBlock>
-        <AdBlockButton
-          href="https://getadblock.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <AdBlockButton href={url} target="_blank" rel="noopener noreferrer">
           Get Adblock now
         </AdBlockButton>
       </ButtonBlock>
