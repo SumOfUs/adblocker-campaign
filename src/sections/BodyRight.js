@@ -11,6 +11,8 @@ import {
 import CountUp from "react-countup";
 
 import avatar from "../assets/person.jpg";
+import Colors from "../helpers/Colors";
+import { tablet, mobile } from "../helpers/Devices";
 
 const Right = () => {
   const url = "https://adblocker-campaign.netlify.app/";
@@ -55,27 +57,36 @@ const Right = () => {
 };
 
 const Wrapper = styled.div`
-  margin: 40px;
+  padding: 40px;
   width: 35%;
   display: flex;
   flex-direction: column;
+  @media ${tablet} {
+    width: 100%;
+    padding: 40px 0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  @media ${mobile} {
+    max-width: unset;
+  }
 `;
 
 const Counter = styled.div`
   height: 60px;
   border-radius: 8px;
-  background-color: #00c0cf;
+  background-color: ${Colors.souSkyBlue};
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 40px;
   letter-spacing: 6px;
-  color: white;
+  color: ${Colors.white};
   font-weight: 600;
 `;
 
 const Desc = styled.div`
-  color: #00c0cf;
+  color: ${Colors.souSkyBlue};
   font-size: 28px;
   text-align: center;
   margin: 10px 0;
@@ -87,7 +98,7 @@ const Icon = styled.div`
   text-align: left;
   .fas {
     font-size: 56px;
-    color: #00c0cf;
+    color: ${Colors.souSkyBlue};
     margin-right: 30px;
   }
   span {
@@ -105,7 +116,7 @@ const Person = styled.img`
 
 const ShareDesc = styled(Desc)`
   text-align: left;
-  color: black;
+  color: ${Colors.black};
   text-transform: none;
   font-weight: 600;
 `;

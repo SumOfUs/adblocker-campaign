@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import Colors from "../helpers/Colors";
+
 const Header = () => {
   return (
     <Wrapper>
@@ -17,7 +19,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-bottom: 2px solid #00c0cf;
+  border-bottom: 2px solid ${Colors.souSkyBlue};
 `;
 
 const Left = styled.div`
@@ -32,8 +34,9 @@ const SmallContent = styled.div`
 `;
 
 const BigContent = styled(SmallContent)`
-  color: red;
+  color: ${Colors.redOrange};
   font-weight: 700;
   font-size: 24px;
 `;
+
 export default Header;

@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import Colors from "../helpers/Colors";
+import { tablet } from "../helpers/Devices";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -75,11 +77,17 @@ const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #172340;
+  background-color: ${Colors.souDarkBlue};
+  @media ${tablet} {
+    flex-direction: column-reverse;
+  }
 `;
 
 const Left = styled.div`
   width: 60%;
+  @media ${tablet} {
+    width: 100%;
+  }
 `;
 
 const Right = styled.div``;
@@ -88,6 +96,9 @@ const Links = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
+  @media ${tablet} {
+    justify-content: center;
+  }
 `;
 
 const Link = styled.a`
@@ -96,12 +107,18 @@ const Link = styled.a`
   padding-right: 18px;
   color: white;
   &:hover {
-    color: #00c0cf;
+    color: ${Colors.souSkyBlue};
+  }
+  @media ${tablet} {
+    font-size: 16px;
   }
 `;
 
 const Copyright = styled.div`
-  color: white;
+  color: ${Colors.white};
+  @media ${tablet} {
+    text-align: center;
+  }
 `;
 
 export default Footer;

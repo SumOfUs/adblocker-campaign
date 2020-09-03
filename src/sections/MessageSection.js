@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import Colors from "../helpers/Colors";
+import { tablet } from "../helpers/Devices";
 
 const MessageSection = () => {
   return (
@@ -20,11 +22,17 @@ const MessageSection = () => {
 
 const Wrapper = styled.div`
   min-height: 150px;
-  background-color: #172340;
+  background-color: ${Colors.souDarkBlue};
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 30px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  @media ${tablet} {
+    padding: 15px;
+    border-radius: 0;
+  }
 `;
 
 const Content = styled.div`
@@ -35,7 +43,7 @@ const Content = styled.div`
 `;
 
 const Desc = styled.div`
-  color: white;
+  color: ${Colors.whiteSmoke};
 `;
 
 export default MessageSection;

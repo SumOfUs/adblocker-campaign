@@ -5,6 +5,8 @@ import styled from "styled-components";
 import SOUD from "../assets/partnerLogos/sumofus-dark.svg";
 import ADB from "../assets/partnerLogos/adblock.png";
 
+import Colors from "../helpers/Colors";
+
 const Partner = () => {
   return (
     <Wrapper>
@@ -22,13 +24,16 @@ const Partner = () => {
 };
 
 const Wrapper = styled.div`
-  height: 300px;
+  min-height: 300px;
   padding: 30px;
-  margin-top: 60px;
+  margin-top: 20px;
+  background-color: ${Colors.lightGrey};
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 `;
 
-const Title = styled.h2`
-  color: #f8492d;
+const Title = styled.h3`
+  color: ${Colors.souDarkBlue};
 `;
 
 const LogoWrapper = styled.div`

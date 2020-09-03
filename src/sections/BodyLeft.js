@@ -15,6 +15,9 @@ import {
 import Button from "../components/Button";
 import helper from "../assets/helper.png";
 
+import Colors from "../helpers/Colors";
+import { tablet } from "../helpers/Devices";
+
 const LeftSection = () => {
   let detectDevice = "";
   if (isMobile) {
@@ -65,7 +68,7 @@ const LeftSection = () => {
 const Left = styled.div`
   width: 60%;
   padding-right: 30px;
-  border-right: 1px solid #d7d7d7;
+  border-right: 1px solid ${Colors.darkGray};
   p {
     font-size: 18px;
     line-height: 26px;
@@ -76,6 +79,11 @@ const Left = styled.div`
   .fas {
     padding: 0 10px;
     font-size: 16px;
+  }
+  @media ${tablet} {
+    width: 100%;
+    padding-right: unset;
+    border: none;
   }
 `;
 
@@ -92,6 +100,10 @@ const AdBlockButton = styled(Button)`
 const Image = styled.img`
   height: 600px;
   object-fit: contain;
+  @media ${tablet} {
+    height: unset;
+    width: 100%;
+  }
 `;
 
 export default LeftSection;
