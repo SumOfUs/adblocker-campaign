@@ -1,34 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  browserName,
-  osName,
-  isMobile,
-  isIOS,
-  isAndroid,
-  isChrome,
-  isSafari,
-  isFirefox,
-  isEdge,
-} from "react-device-detect";
 
 import Button from "../components/Button";
 import helper from "../assets/helper.png";
 
 import Colors from "../helpers/Colors";
-import { tablet } from "../helpers/Devices";
+import { tablet, mobileSmall } from "../helpers/Devices";
+import Counter from "./Counter";
 
 const LeftSection = () => {
-  let detectDevice = "";
-  if (isMobile) {
-    detectDevice = isAndroid ? osName.toLowerCase() : isIOS ? osName : "";
-  } else if (isChrome || isSafari || isFirefox || isEdge) {
-    detectDevice = browserName.toLowerCase();
-  }
-  const url = `https://getadblock.com/${detectDevice}`;
+  const url = "https://adblockultimate.net/browsers";
 
   return (
     <Left>
+      <CounterWrapper>
+        <Counter />
+      </CounterWrapper>
       <p>
         <span className="bold">Facebook is reeling</span> as corporate giants —
         from Coke to Ford to Starbucks suspend their ads on the platform until
@@ -47,18 +34,18 @@ const LeftSection = () => {
       </p>
       <ButtonBlock>
         <AdBlockButton href={url} target="_blank" rel="noopener noreferrer">
-          Get Adblock now
+          Download the ad blocker
         </AdBlockButton>
       </ButtonBlock>
       <p className="bold">Here are the steps to only block Facebook:</p>
       <p style={{ width: "85%" }}>
         <span>Settings</span>
         <i className="fas fa-arrow-right"></i>
-        <span>Customize</span>
+        <span>Filters</span>
         <i className="fas fa-arrow-right"></i>
-        <span>Show ads everywhere except for these domains</span>
+        <span>Custom Filters</span>
         <i className="fas fa-arrow-right"></i>
-        <span>Facebook.com</span>
+        <span>Add https://www.facebook.com</span>
       </p>
       <Image src={helper} />
     </Left>
@@ -84,6 +71,15 @@ const Left = styled.div`
     width: 100%;
     padding-right: unset;
     border: none;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+`;
+
+const CounterWrapper = styled.div`
+  display: none;
+  @media ${tablet} {
+    display: block;
   }
 `;
 
@@ -91,6 +87,9 @@ const ButtonBlock = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-right: 30px;
+  @media ${mobileSmall} {
+    margin: 0;
+  }
 `;
 
 const AdBlockButton = styled(Button)`
@@ -98,7 +97,7 @@ const AdBlockButton = styled(Button)`
 `;
 
 const Image = styled.img`
-  height: 600px;
+  height: 400px;
   object-fit: contain;
   @media ${tablet} {
     height: unset;

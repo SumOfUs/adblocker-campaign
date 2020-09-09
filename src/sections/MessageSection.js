@@ -22,7 +22,7 @@ const MessageSection = () => {
 
 const Wrapper = styled.div`
   min-height: 150px;
-  background-color: ${Colors.souDarkBlue};
+  background-color: ${Colors.lightGrey};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,12 +38,12 @@ const Wrapper = styled.div`
 const Content = styled.div`
   font-weight: 700;
   font-size: 20px;
-  color: white;
+  color: ${Colors.black};
   margin-bottom: 15px;
 `;
 
 const Desc = styled.div`
-  color: ${Colors.whiteSmoke};
+  /* color: ${Colors.black}; */
 `;
 
 export default MessageSection;

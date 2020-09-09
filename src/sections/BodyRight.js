@@ -5,52 +5,51 @@ import {
   FacebookIcon,
   TwitterShareButton,
   TwitterIcon,
-  LinkedinShareButton,
-  LinkedinIcon,
+  EmailShareButton,
+  EmailIcon,
 } from "react-share";
-import CountUp from "react-countup";
 
 import avatar from "../assets/person.jpg";
 import Colors from "../helpers/Colors";
 import { tablet, mobile } from "../helpers/Devices";
+import Counter from "./Counter";
 
 const Right = () => {
-  const url = "https://adblocker-campaign.netlify.app/";
-  const count = parseInt(Math.random() * 100000);
+  const shareUrl = window.location.href;
   return (
     <Wrapper>
-      <Counter>
-        <CountUp end={count} duration={2} />
-      </Counter>
-      <Desc>Downloads</Desc>
-      <Icon>
+      <CounterWrapper>
+        <Counter />
+      </CounterWrapper>
+      <Quote>
         <i className="fas fa-quote-left"></i>
         <span>
-          Cras ultricies ligula sed magna dictum porta. Proin eget tortor risus.
-          Mauris blandit aliquet elit, pulvinar a.
+          ... if Facebook were around in the 1930s, it would have allowed Hitler
+          to post 30-second ads on his ‘solution’ to the ‘Jewish problem’.
         </span>
-      </Icon>
+        <div>- Sacha Baron Cohen</div>
+      </Quote>
       <Person src={avatar} alt="celebrity" />
       <ShareDesc>Share now :</ShareDesc>
       <SocialShares>
         <FacebookShareButton
-          url={url}
+          url={shareUrl}
           onShareWindowClose={() => console.log("Shared in FB")}
         >
           <FacebookIcon size={80} round />
         </FacebookShareButton>
         <TwitterShareButton
-          url={url}
+          url={shareUrl}
           onShareWindowClose={() => console.log("Twitter shared")}
         >
           <TwitterIcon size={80} round />
         </TwitterShareButton>
-        <LinkedinShareButton
-          url={url}
+        <EmailShareButton
+          url={shareUrl}
           onShareWindowClose={() => console.log("Linkedin shared")}
         >
-          <LinkedinIcon size={80} round />
-        </LinkedinShareButton>
+          <EmailIcon size={80} round />
+        </EmailShareButton>
       </SocialShares>
     </Wrapper>
   );
@@ -72,39 +71,28 @@ const Wrapper = styled.div`
   }
 `;
 
-const Counter = styled.div`
-  height: 60px;
-  border-radius: 8px;
-  background-color: ${Colors.souSkyBlue};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  letter-spacing: 6px;
-  color: ${Colors.white};
-  font-weight: 600;
+const CounterWrapper = styled.div`
+  display: block;
+  @media ${tablet} {
+    display: none;
+  }
 `;
-
-const Desc = styled.div`
-  color: ${Colors.souSkyBlue};
-  font-size: 28px;
-  text-align: center;
-  margin: 10px 0;
-  text-transform: uppercase;
-  margin-bottom: 40px;
-`;
-
-const Icon = styled.div`
+const Quote = styled.div`
   text-align: left;
   .fas {
-    font-size: 56px;
+    font-size: 48px;
     color: ${Colors.souSkyBlue};
-    margin-right: 30px;
+    margin-right: 25px;
   }
   span {
-    font-size: 32px;
+    font-size: 26px;
     line-height: 40px;
     font-weight: 400;
+  }
+  div {
+    text-align: right;
+    font-size: 30px;
+    margin-top: 10px;
   }
 `;
 
@@ -114,7 +102,10 @@ const Person = styled.img`
   margin: 20px 0;
 `;
 
-const ShareDesc = styled(Desc)`
+const ShareDesc = styled.div`
+  font-size: 20px;
+  margin: 10px 0;
+  margin-bottom: 40px;
   text-align: left;
   color: ${Colors.black};
   text-transform: none;

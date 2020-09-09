@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
+import logo from "../assets/logo.png";
 import Colors from "../helpers/Colors";
 
 const Header = () => {
   return (
     <Wrapper>
       <Left>
-        <BigContent>Block</BigContent>
-        <SmallContent>the hate</SmallContent>
+        <Logo src={logo} alt="adblocker logo" />
       </Left>
     </Wrapper>
   );
@@ -26,17 +26,8 @@ const Left = styled.div`
   margin: 0 15px;
 `;
 
-const SmallContent = styled.div`
-  font-size: 18px;
-  text-transform: uppercase;
-  line-height: 18px;
-  font-weight: 600;
-`;
-
-const BigContent = styled(SmallContent)`
-  color: ${Colors.redOrange};
-  font-weight: 700;
-  font-size: 24px;
+const Logo = styled.img`
+  height: 60px;
 `;
 
 export default Header;
