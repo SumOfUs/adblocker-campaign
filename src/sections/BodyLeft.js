@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 import Button from "../components/Button";
 import helper from "../assets/helper.png";
@@ -10,6 +11,24 @@ import Counter from "./Counter";
 
 const LeftSection = () => {
   const url = "https://adblockultimate.net/browsers";
+
+  const fetchUrl =
+    "https://aza6ttiq2i.execute-api.eu-west-1.amazonaws.com/prod/adblockerdownloads/1";
+
+  useEffect(() => {
+    // axios.defaults.headers.put["Access-Control-Allow-Origin"] = "*";
+  }, []);
+
+  function increment() {
+    axios
+      .put(fetchUrl, {})
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
   return (
     <Left>
@@ -33,7 +52,12 @@ const LeftSection = () => {
         pressure on Facebook to act.
       </p>
       <ButtonBlock>
-        <AdBlockButton href={url} target="_blank" rel="noopener noreferrer">
+        <AdBlockButton
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => increment()}
+        >
           Download the ad blocker
         </AdBlockButton>
       </ButtonBlock>

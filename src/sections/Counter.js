@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import CountUp from "react-countup";
 
 import Colors from "../helpers/Colors";
 
 const Counter = () => {
-  const count = parseInt(Math.random() * 100000);
+  const [count, setCount] = useState(0);
+
+  async function fetchData() {
+    const res = await fetch(
+      "https://aza6ttiq2i.execute-api.eu-west-1.amazonaws.com/prod/adblockerdownloads/1"
+    );
+    res
+      .json()
+      .then((res) => {
+        console.log(res.Item.counter.N);
+        setCount(+res.Item.counter.N);
+      })
+      .catch((err) => {
+        console.log(err);
+        setCount(34583);
+      });
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <>
