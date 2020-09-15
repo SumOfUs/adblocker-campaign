@@ -126,6 +126,7 @@ const Image = styled.img`
   height: 400px;
   object-fit: contain;
   margin: 15px 0;
+  display: none;
   @media ${tablet} {
     height: unset;
     width: 100%;
