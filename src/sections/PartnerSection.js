@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 // import SOUW from "../assets/partnerLogos/sumofus-white.svg";
 import SOUD from "../assets/partnerLogos/sumofus-dark.svg";
-import ADB from "../assets/partnerLogos/adblock.png";
-import ADBU from "../assets/partnerLogos/adblock-ultimate.png";
+// import ADB from "../assets/partnerLogos/adblock.png";
+// import ADBU from "../assets/partnerLogos/adblock-ultimate.png";
 
 import Colors from "../helpers/Colors";
 
@@ -14,18 +14,23 @@ const Partner = () => {
       <Title>Ad Blocker brought to you by:</Title>
       <LogoWrapper>
         <Logo src={SOUD} alt="SumOfUs" />
-        <Logo src={ADB} alt="Ad Block" />
+        {/* <Logo src={ADB} alt="Ad Block" />
         <Logo src={SOUD} alt="SumOfUs" />
         <Logo src={ADBU} alt="Ad Block Ultimate" />
         <Logo src={SOUD} alt="SumOfUs" />
-        <Logo src={ADBU} alt="Ad Block" />
+        <Logo src={ADBU} alt="Ad Block" /> */}
       </LogoWrapper>
+      <Message>
+        If you're part of an organization which would like to join the Block
+        Hate coalition, email{" "}
+        <a href="mailto:blockhate@sumofus.org">blockhate@sumofus.org</a>
+      </Message>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  min-height: 300px;
+  /* min-height: 300px; */
   padding: 30px;
   margin-top: 20px;
   background-color: ${Colors.lightGrey};
@@ -39,15 +44,23 @@ const Title = styled.h3`
 
 const LogoWrapper = styled.div`
   display: flex;
-  margin-top: 40px;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Logo = styled.img`
   height: 60px;
-  margin: 20px;
+  margin: 10px 0 30px;
+`;
+
+const Message = styled.div`
+  font-size: 20px;
+  a {
+    text-decoration: none;
+    color: ${Colors.souSkyBlue};
+  }
 `;
 
 export default Partner;

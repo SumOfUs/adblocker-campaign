@@ -61,16 +61,18 @@ const LeftSection = () => {
           Download the ad blocker
         </AdBlockButton>
       </ButtonBlock>
-      <p className="bold">Here are the steps to only block Facebook:</p>
-      <p style={{ width: "85%" }}>
-        <span>Settings</span>
-        <i className="fas fa-arrow-right"></i>
-        <span>Filters</span>
-        <i className="fas fa-arrow-right"></i>
-        <span>Custom Filters</span>
-        <i className="fas fa-arrow-right"></i>
-        <span>Add https://www.facebook.com</span>
-      </p>
+      <div style={{ display: "none" }}>
+        <p className="bold">Here are the steps to only block Facebook:</p>
+        <p style={{ width: "85%" }}>
+          <span>Settings</span>
+          <i className="fas fa-arrow-right"></i>
+          <span>Filters</span>
+          <i className="fas fa-arrow-right"></i>
+          <span>Custom Filters</span>
+          <i className="fas fa-arrow-right"></i>
+          <span>Add https://www.facebook.com</span>
+        </p>
+      </div>
       <Image src={helper} />
     </Left>
   );
@@ -123,6 +125,7 @@ const AdBlockButton = styled(Button)`
 const Image = styled.img`
   height: 400px;
   object-fit: contain;
+  margin: 15px 0;
   @media ${tablet} {
     height: unset;
     width: 100%;

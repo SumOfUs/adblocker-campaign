@@ -9,7 +9,8 @@ const MessageSection = () => {
       <Content>Facebook Ad Boycott: Download the Ad Blocker</Content>
       <Desc>
         <span style={{ fontWeight: 500 }}>
-          Click to download the free, simple ad blocker.
+          Click to download the free, simple ad blocker. You can easily
+          whitelist sites that aren't Facebook with just one click.
         </span>
         <span style={{ fontWeight: 300, marginLeft: "8px" }}>
           You can choose to only block ads on facebook, not other sites, by
