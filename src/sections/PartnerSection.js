@@ -23,7 +23,7 @@ const Partner = () => {
       <Message>
         If you're part of an organization which would like to join the Block
         Hate coalition, email{" "}
-        <a href="mailto:blockhate@sumofus.org">blockhate@sumofus.org</a>
+        <a href="mailto:info@sumofus.org">info@sumofus.org</a>
       </Message>
     </Wrapper>
   );

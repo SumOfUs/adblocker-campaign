@@ -12,7 +12,7 @@ const MessageSection = () => {
           Click to download the free, simple ad blocker. You can easily
           whitelist sites that aren't Facebook with just one click.
         </span>
-        <span style={{ fontWeight: 300, marginLeft: "8px" }}>
+        <span style={{ fontWeight: 300, marginLeft: "8px", display: "none" }}>
           You can choose to only block ads on facebook, not other sites, by
           adjusting the settings as shown further below.
         </span>
