@@ -15,7 +15,7 @@ import { tablet, mobile } from "../helpers/Devices";
 import Counter from "./Counter";
 
 const Right = () => {
-  const shareUrl = window.location.href;
+  const shareUrl = 'https://www.block-facebook.com/';
   return (
     <Wrapper>
       <CounterWrapper>
@@ -46,13 +46,15 @@ const Right = () => {
           </FacebookShareButton>
           <TwitterShareButton
             url={shareUrl}
+            title="Join the Facebook ad boycott -- download the FB adblocker:"
             onShareWindowClose={() => console.log("Twitter shared")}
           >
             <TwitterIcon size={80} round />
           </TwitterShareButton>
           <EmailShareButton
             url={shareUrl}
-            onShareWindowClose={() => console.log("Linkedin shared")}
+            subject="Join the Facebook ad boycott -- download the FB adblocker"
+            onShareWindowClose={() => console.log("Email shared")}
           >
             <EmailIcon size={80} round />
           </EmailShareButton>

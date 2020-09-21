@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <Wrapper>
       <Left>
-        <Logo src={logo} alt="adblocker logo" />
+        <Logo src={logo} alt="adblocker logo" onClick={() => window.location.reload()}/>
       </Left>
     </Wrapper>
   );
@@ -28,6 +28,7 @@ const Left = styled.div`
 
 const Logo = styled.img`
   height: 60px;
+  cursor: pointer;
 `;
 
 export default Header;
