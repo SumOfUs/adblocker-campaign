@@ -15,7 +15,7 @@ import { tablet, mobile } from "../helpers/Devices";
 import Counter from "./Counter";
 
 const Right = () => {
-  const shareUrl = 'https://www.block-facebook.com/';
+  const shareUrl = "https://www.block-facebook.com/";
   return (
     <Wrapper>
       <CounterWrapper>
@@ -109,6 +109,9 @@ const Thumbnail = styled.div`
     font-size: 24px;
     line-height: 40px;
     font-weight: 400;
+    @media ${mobile} {
+      font-size: 22px;
+    }
   }
 `;
 

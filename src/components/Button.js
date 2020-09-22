@@ -29,7 +29,7 @@ const Button = styled.a`
     font-size: 18px;
   }
   @media ${mobileSmall} {
-    width: 100%;
+    width: 90%;
     font-size: 16px;
     height: 60px;
   }
