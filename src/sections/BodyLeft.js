@@ -35,22 +35,32 @@ const LeftSection = () => {
       <CounterWrapper>
         <Counter />
       </CounterWrapper>
+
       <p>
-        <span className="bold">Facebook is reeling</span> as corporate giants —
-        from Coke to Ford to Starbucks suspend their ads on the platform until
-        Facebook cleans up its hate speech. Ads bring Facebook 99% of its
-        income, so this boycott is hitting where it hurts — and
-        <span className="bold"> now we can join in, too.</span>
+        <span className="bold">Facebook is swamped</span>&nbsp;with conspiracy
+        theories, white supremacy, hate speech, and election suppression.
+        It’s&nbsp;<span className="bold">time they clean up the mess.</span>
       </p>
+
       <p>
-        If millions of us{" "}
+        <span className="bold">Ads bring Facebook 99% of its income.</span>
+        &nbsp;That’s why when corporate giants from Coke to Ford to Starbucks
+        suspended their ads in protest of Facebook’s hate speech problem -- it
+        struck a nerve.&nbsp;
+        <span className="bold">Now we can join in, too.</span>
+      </p>
+
+      <p>
+        If millions of us&nbsp;
         <span className="bold">
-          show Facebook we won’t allow any ads in our feeds until they stop the
-          hate and disinformation by downloading a simple, free adblocker
-        </span>{" "}
-        — we can generate a new people-powered media wave and double the
-        pressure on Facebook to act.
+          tell Facebook we won’t allow them to show us any ads until they stop
+          the hate and disinformation,
+        </span>
+        &nbsp;we can generate a new people-powered media wave and double the
+        pressure on Facebook to act.&nbsp;
+        <span className="bold">All it takes is a simple, free adblocker:</span>
       </p>
+
       <ButtonBlock>
         <AdBlockButton
           href={url}
@@ -62,7 +72,9 @@ const LeftSection = () => {
         </AdBlockButton>
       </ButtonBlock>
       <div>
-        To whitelist sites other than Facebook, click the AdBlocker Ultimate icon in your browser, and then toggle to <span className="bold">"enable on this site".</span> 
+        To whitelist sites other than Facebook, click the AdBlocker Ultimate
+        icon in your browser, and then toggle to&nbsp;
+        <span className="bold">"enable on this site".</span>
       </div>
       <Image src={helper} />
     </Left>
