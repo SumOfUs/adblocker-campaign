@@ -9,7 +9,7 @@ const Counter = () => {
 
   async function fetchData() {
     const res = await fetch(
-      "https://aza6ttiq2i.execute-api.eu-west-1.amazonaws.com/prod/adblockerdownloads/1"
+      "https://hgoc1gxdu2.execute-api.eu-west-2.amazonaws.com/prod/adblockerdownloads/1"
     );
     res
       .json()
