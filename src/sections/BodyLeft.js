@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -8,20 +8,13 @@ import helper from "../assets/helper.png";
 import Colors from "../helpers/Colors";
 import { tablet, mobileSmall } from "../helpers/Devices";
 import Counter from "./Counter";
+import { API_URL, ADBLOCKER_URL } from '../helpers/Constants';
 
 const LeftSection = () => {
-  const url = "https://adblockultimate.net/browsers";
-
-  const fetchUrl =
-    "https://hgoc1gxdu2.execute-api.eu-west-2.amazonaws.com/prod/adblockerdownloads/1";
-
-  useEffect(() => {
-    // axios.defaults.headers.put["Access-Control-Allow-Origin"] = "*";
-  }, []);
 
   function increment() {
     axios
-      .put(fetchUrl, {})
+      .put(API_URL, {})
       .then(function (response) {
         console.log(response);
       })
@@ -63,7 +56,7 @@ const LeftSection = () => {
 
       <ButtonBlock>
         <AdBlockButton
-          href={url}
+          href={ADBLOCKER_URL}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => increment()}

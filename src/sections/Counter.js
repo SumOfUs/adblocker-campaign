@@ -3,14 +3,14 @@ import styled from "styled-components";
 import CountUp from "react-countup";
 
 import Colors from "../helpers/Colors";
+import { API_URL } from '../helpers/Constants';
+
 
 const Counter = () => {
   const [count, setCount] = useState(0);
 
   async function fetchData() {
-    const res = await fetch(
-      "https://hgoc1gxdu2.execute-api.eu-west-2.amazonaws.com/prod/adblockerdownloads/1"
-    );
+    const res = await fetch(API_URL);
     res
       .json()
       .then((res) => {

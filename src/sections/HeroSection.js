@@ -1,24 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import axios from "axios";
 
 import cover from "../assets/cover.jpg";
 import Button from "../components/Button";
 import { mobileSmall } from "../helpers/Devices";
+import { API_URL, ADBLOCKER_URL } from '../helpers/Constants';
+
 
 const HeroSection = () => {
-  const url = "https://adblockultimate.net/browsers";
-
-  const fetchUrl =
-  "https://hgoc1gxdu2.execute-api.eu-west-2.amazonaws.com/prod/adblockerdownloads/1"
-
-  useEffect(() => {
-    // axios.defaults.headers.put["Access-Control-Allow-Origin"] = "*";
-  }, []);
 
   function increment() {
     axios
-      .put(fetchUrl, {})
+      .put(API_URL, {})
       .then(function (response) {
         console.log(response);
       })
@@ -31,7 +25,7 @@ const HeroSection = () => {
     <Wrapper>
       <Image src={cover} />
       <AdBlockButton
-        href={url}
+        href={ADBLOCKER_URL}
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => increment()}
