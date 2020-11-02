@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { FormattedMessage } from 'react-intl';
+
 
 import cover from "../assets/cover.jpg";
 import Button from "../components/Button";
@@ -30,7 +32,10 @@ const HeroSection = () => {
         rel="noopener noreferrer"
         onClick={() => increment()}
       >
-        Download the ad blocker
+        <FormattedMessage
+          id="msg.downloadAdBlocker"
+          defaultMessage="Download the ad blocker"
+        />
       </AdBlockButton>
     </Wrapper>
   );

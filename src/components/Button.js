@@ -12,7 +12,7 @@ const Button = styled.a`
   border-radius: 28px;
   border-bottom-left-radius: 0;
   color: white;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 500;
   text-transform: uppercase;
   text-decoration: none;
@@ -26,7 +26,7 @@ const Button = styled.a`
   }
   @media ${mobile} {
     width: 320px;
-    font-size: 18px;
+    font-size: 16px;
   }
   @media ${mobileSmall} {
     width: 90%;

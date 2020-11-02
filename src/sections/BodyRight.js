@@ -8,6 +8,7 @@ import {
   EmailShareButton,
   EmailIcon,
 } from "react-share";
+import { FormattedMessage } from "react-intl";
 
 import avatar from "../assets/person.jpg";
 import Colors from "../helpers/Colors";
@@ -25,9 +26,10 @@ const Right = () => {
         <Quote>
           <i className="fas fa-quote-left"></i>
           <div>
-            ... if Facebook were around in the 1930s, it would have allowed
-            Hitler to post 30-second ads on his ‘solution’ to the ‘Jewish
-            problem’.
+            <FormattedMessage
+              id="msg.quote"
+              defaultMessage="... if Facebook were around in the 1930s, it would have allowed Hitler to post 30-second ads on his‘solution’ to the ‘Jewish problem’."
+            />
           </div>
         </Quote>
         <Thumbnail>
@@ -36,7 +38,9 @@ const Right = () => {
         </Thumbnail>
       </div>
       <div>
-        <ShareDesc>Share now :</ShareDesc>
+        <ShareDesc>
+          <FormattedMessage id="msg.share" defaultMessage="Share now :" />
+        </ShareDesc>
         <SocialShares>
           <FacebookShareButton
             url={shareUrl}

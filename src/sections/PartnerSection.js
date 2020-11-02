@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { FormattedMessage } from "react-intl";
 
 // import SOUW from "../assets/partnerLogos/sumofus-white.svg";
 import SOUD from "../assets/partnerLogos/sumofus-dark.svg";
@@ -11,7 +12,12 @@ import Colors from "../helpers/Colors";
 const Partner = () => {
   return (
     <Wrapper>
-      <Title>Ad Blocker brought to you by:</Title>
+      <Title>
+        <FormattedMessage
+          id="msg.broughtToYou"
+          defaultMessage="Ad Blocker brought to you by:"
+        />
+      </Title>
       <LogoWrapper>
         <Logo src={SOUD} alt="SumOfUs" />
         {/* <Logo src={ADB} alt="Ad Block" />
@@ -21,9 +27,13 @@ const Partner = () => {
         <Logo src={ADBU} alt="Ad Block" /> */}
       </LogoWrapper>
       <Message>
-        If you're part of an organization which would like to join the Block
-        Hate coalition, email&nbsp;
-        <a href="mailto:info@sumofus.org">info@sumofus.org</a>
+        <FormattedMessage
+          id="msg.emailMsg"
+          defaultMessage="If you're part of an organization which would like to join the Block
+        Hate coalition, email"
+        />
+        &nbsp;
+        <a href="mailto:hallo@sumofus.org">hallo@sumofus.org</a>
       </Message>
     </Wrapper>
   );

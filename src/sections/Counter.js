@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import CountUp from "react-countup";
+import { FormattedMessage } from "react-intl";
 
 import Colors from "../helpers/Colors";
-import { API_URL } from '../helpers/Constants';
-
+import { API_URL } from "../helpers/Constants";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
@@ -32,7 +32,12 @@ const Counter = () => {
       <Wrapper>
         <CountUp end={count} duration={2} />
       </Wrapper>
-      <Desc>People are blocking the hate</Desc>
+      <Desc>
+        <FormattedMessage
+          id="msg.hate"
+          defaultMessage="People are blocking the hate"
+        />
+      </Desc>
     </>
   );
 };

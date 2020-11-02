@@ -1,16 +1,44 @@
 import React from "react";
 import styled from "styled-components";
+import { useIntl, FormattedMessage } from "react-intl";
+
 import Colors from "../helpers/Colors";
 import { tablet } from "../helpers/Devices";
 
 const Footer = () => {
+  const { formatMessage: fm } = useIntl();
+
   const year = new Date().getFullYear();
 
   const navOptions = [
-    { title: "Home", link: "https://www.sumofus.org/" },
-    { title: "About", link: "https://www.sumofus.org/about/" },
-    { title: "Privacy Policy", link: "https://www.sumofus.org/privacy/" },
-    { title: "Contact", link: "https://www.sumofus.org/contact/" },
+    {
+      title: fm({
+        id: "msg.footerHome",
+        defaultMessage: "Home",
+      }),
+      link: "https://www.sumofus.org/",
+    },
+    {
+      title: fm({
+        id: "msg.footerAbout",
+        defaultMessage: "About",
+      }),
+      link: "https://www.sumofus.org/about/",
+    },
+    {
+      title: fm({
+        id: "msg.footerPrivacy",
+        defaultMessage: "Privacy Policy",
+      }),
+      link: "https://www.sumofus.org/privacy/",
+    },
+    {
+      title: fm({
+        id: "msg.footerContact",
+        defaultMessage: "Contact",
+      }),
+      link: "https://www.sumofus.org/contact/",
+    },
   ];
 
   const socialMediaOptions = [
@@ -48,7 +76,16 @@ const Footer = () => {
           })}
         </Links>
         <Copyright>
-          {`© ${year} SumOfUs, Creative Commons Attribution 3.0 Unported License.`}
+          <span> © </span>
+          &nbsp;
+          <span>{year}</span>
+          &nbsp;
+          <span>
+            <FormattedMessage
+              id="msg.license"
+              defaultMessage="SumOfUs, Creative Commons Attribution 3.0 Unported License."
+            />
+          </span>
         </Copyright>
       </Left>
       <Right>
