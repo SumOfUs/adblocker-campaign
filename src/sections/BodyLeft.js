@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { FormattedMessage, useIntl, defineMessages } from "react-intl";
@@ -9,9 +9,17 @@ import helper from "../assets/helper.png";
 import Colors from "../helpers/Colors";
 import { tablet, mobileSmall } from "../helpers/Devices";
 import Counter from "./Counter";
-import { API_URL, ADBLOCKER_URL } from "../helpers/Constants";
+import {
+  API_URL,
+  ADBLOCKER_URL,
+  ADBLOCKER_URL_GERMAN,
+} from "../helpers/Constants";
+import { LangContext } from "../helpers/Providers/lang.service";
 
 const LeftSection = () => {
+  const langContext = useContext(LangContext);
+  const { lang } = langContext;
+
   const { formatMessage: fm } = useIntl();
 
   const messages = defineMessages({
@@ -78,7 +86,7 @@ const LeftSection = () => {
 
       <ButtonBlock>
         <AdBlockButton
-          href={ADBLOCKER_URL}
+          href={lang === "en" ? ADBLOCKER_URL : ADBLOCKER_URL_GERMAN}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => increment()}

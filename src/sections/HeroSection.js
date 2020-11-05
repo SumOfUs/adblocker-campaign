@@ -1,24 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import { FormattedMessage } from 'react-intl';
-
+import { FormattedMessage } from "react-intl";
 
 import cover from "../assets/cover.jpg";
 import Button from "../components/Button";
 import { mobileSmall } from "../helpers/Devices";
-import { API_URL, ADBLOCKER_URL } from '../helpers/Constants';
-
+import {
+  API_URL,
+  ADBLOCKER_URL,
+  ADBLOCKER_URL_GERMAN,
+} from "../helpers/Constants";
+import { LangContext } from "../helpers/Providers/lang.service";
 
 const HeroSection = () => {
+  const langContext = useContext(LangContext);
+  const { lang } = langContext;
 
   function increment() {
     axios
       .put(API_URL, {})
-      .then(function (response) {
+      .then(function(response) {
         console.log(response);
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.log(error);
       });
   }
@@ -27,7 +32,7 @@ const HeroSection = () => {
     <Wrapper>
       <Image src={cover} />
       <AdBlockButton
-        href={ADBLOCKER_URL}
+        href={lang === "en" ? ADBLOCKER_URL : ADBLOCKER_URL_GERMAN}
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => increment()}
